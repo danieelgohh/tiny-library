@@ -41,13 +41,15 @@ export default function RootLayout({
                 <Image className="w-20 h-12.5 object-cover" src={logo} alt="Tiny library logo" width={200} height={200}></Image>
               </Link>
               <div className="flex gap-10 font-semibold font-primary text-[#606060]">
-                <li><Link href="/books">BOOKS</Link></li>
-                <li><Link href="/about">ABOUT</Link></li>
+                <li className="hover:text-[#F77429]"><Link href="/books">BOOKS</Link></li>
+                <li className="hover:text-[#F77429]"><Link href="/about">ABOUT</Link></li>
               </div>
             </ul>
           </nav>
         </header>
-        {children}
+        <main>
+          {children}
+        </main>
       </body>
     </html>
   )
