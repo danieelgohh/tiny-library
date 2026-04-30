@@ -1,18 +1,20 @@
-import booksData from '@/app/data/books.json'
+import CategoryNav from "../components/CategoryNav"
+import SearchBar from "../components/SearchBar"
 
-export default function BooksLayout({ children } : Readonly<{
+type BooksLayoutProps = {
   children: React.ReactNode
-}>) {
-  const categories = booksData.map(bd => bd.category)
-  const finalCategories = [...new Set(["all", ...categories])]
+  searchParams: Promise<{
+    query?: string
+  }>
+}
+
+export default async function BooksLayout({ children, searchParams } : BooksLayoutProps) {
+  const query = (await searchParams)?.query
   return (
     <>
       <header>
-        <nav>
-          <ul className='flex overflow-x-auto gap-5 hide-scrollbar ml-5'>
-            {finalCategories.map(cat => <li className="text-nowrap cursor-pointer hover:text-[#F77429]" key={cat }>{cat.toUpperCase()}</li>)}
-          </ul>
-        </nav>
+        <CategoryNav />
+        <SearchBar query={query} />
       </header>
       <main>{children}</main>
     </>

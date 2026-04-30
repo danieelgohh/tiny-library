@@ -7,8 +7,15 @@ import CardAuthor from '../components/card/CardAuthor'
 import CardTags from '../components/card/CardTags'
 import CardActions from '../components/card/CardActions'
 
-export default function BooksPage() {
-  const books = booksData
+type BooksPageProps = {
+  searchParams: Promise<{
+    query?: string
+  }>
+}
+
+export default async function BooksPage({ searchParams }: BooksPageProps) {
+  const query = (await searchParams)?.query?.toLowerCase() || ""
+  const books = booksData.filter(b => b.category.includes(query) || b.name.toLowerCase().includes(query))
   return (
     <div>
       {books.map(b => (
