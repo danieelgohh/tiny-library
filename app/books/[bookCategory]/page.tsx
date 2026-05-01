@@ -1,4 +1,4 @@
-import { fetchCategory } from "@/app/lib/categories"
+import { fetchCategory } from "@/app/lib/books"
 
 import Card from '@/app/components/card/Card'
 import CardImage from '@/app/components/card/CardImage'
@@ -22,7 +22,7 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
   const filteredBooks = fetchCategory(bookCategory).filter(b => b.category.includes(query) || b.name.toLowerCase().includes(query))
 
   return (
-    <div>
+    <main>
       {filteredBooks.map(b => (
         <Card key={b.id}>
           <CardImage src={b.image} bookTitle={b.name}></CardImage>
@@ -34,6 +34,6 @@ export default async function CategoryPage({ params, searchParams }: CategoryPag
           </div>
         </Card>
       ))}
-    </div>
+    </main>
   )
 }
