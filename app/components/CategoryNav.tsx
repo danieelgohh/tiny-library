@@ -9,15 +9,15 @@ export default function CategoryNav() {
   const categories = booksData.map(bd => bd.category)
   const finalCategories = [...new Set(categories)]
   return (
-    <nav>
-      <ul className='flex overflow-x-auto gap-5 hide-scrollbar ml-5'>
+    <nav className='lg:fixed top-94.25'>
+      <ul className='flex overflow-x-auto gap-5 hide-scrollbar ml-5 lg:flex-col'>
         <Link href='/books'>
           <li className={`text-nowrap hover:text-[#F77429] ${pathname === "/books" ? "text-[#F77429] decoration-[#F77429]" : ""}`}>
             ALL
           </li>
         </Link>
         {finalCategories.map(cat => (
-          <Link href={`/books/${cat}`}>
+          <Link key={cat} href={`/books/${cat}`}>
             <li className={`text-nowrap hover:text-[#F77429] ${pathname === `/books/${cat}` ? "text-[#F77429] decoration-[#F77429]" : ""}`} key={cat}>
               {cat.toUpperCase()}
             </li>

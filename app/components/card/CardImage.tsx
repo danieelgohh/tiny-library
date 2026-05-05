@@ -1,8 +1,8 @@
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import type { JSX } from 'react'
 
 export type CardImageProps = {
-  src: string
+  src: string | StaticImageData
   alt?: string
   width?: number
   height?: number

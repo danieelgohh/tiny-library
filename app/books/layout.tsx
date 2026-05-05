@@ -16,7 +16,7 @@ export default async function BooksLayout({ children, searchParams } : BooksLayo
         <CategoryNav />
         <SearchBar query={query} />
       </header>
-      <main>{children}</main>
+      {children}
     </>
   )
 }
