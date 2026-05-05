@@ -8,36 +8,39 @@ import { Layers, Globe, Flag } from "lucide-react"
 export default function functionName() {
   return (
     <main>
-      <section className="flex flex-col items-start font-primary color-[#1E1E1E] border-b-1 border-b-[#DDDDDD] px-5 mb-10">
+      <section className="flex flex-col items-start font-primary color-[#1E1E1E] border-b-1 border-b-[#DDDDDD] px-5 lg:grid lg:grid-cols-2 lg:items-center lg:gap-25 lg:px-23 lg:mt-10">
         <Image 
+          className="lg:mb-10"
           src={heroImageSquare}
           alt="Background image of a beach shore"
           width={627}
           height={627}
         >
         </Image>
-        <p className="my-5 font-medium text-sm">ABOUT TINY LIBRARY</p>
-        <h1 className="font-secondary text-[2.5em] leading-none">Small shelf, big impact</h1>
-        <p className="my-5 font-normal text-2xl">Tiny Library started as a simple idea: make it easier for curious readers to actually find books they'll love, not just scroll endless lists. Every title here is chosen with care, not algorithms.</p>
-        <Link className="mb-10 border border-2 px-7.5 py-3 self-center" href='/about/contact'>CONTACT US</Link>
+        <article className="flex flex-col mb-10">
+          <p className="my-5 font-medium text-sm">ABOUT TINY LIBRARY</p>
+          <h1 className="font-secondary text-[2.5em] leading-none">Small shelf, big impact</h1>
+          <p className="my-5 font-normal text-2xl lg:mb-18.25">Tiny Library started as a simple idea: make it easier for curious readers to actually find books they'll love, not just scroll endless lists. Every title here is chosen with care, not algorithms.</p>
+          <Link className="border border-2 px-7.5 py-3 self-center" href='/about/contact'>CONTACT US</Link>
+        </article>
       </section>
 
-      <section className="flex flex-col gap-3 items-start font-primary px-5 border-b-1 border-b-[#DDDDDD] mb-10">
-        <article>
+      <section className="flex flex-col gap-3 items-start font-primary px-5 border-b-1 border-b-[#DDDDDD] mb-10 lg:grid lg:grid-cols-3 lg:gap-12">
+        <article className="lg:my-20 xl:ml-33.75">
           <div className="flex gap-1.5 items-center">
             <Layers size={32} color="#000" />
             <h2 className="font-secondary text-[1.75em]">Curated, not crowded</h2>
           </div>
           <p className="font-normal text-xl">Tiny Library keeps the catalogue intentionally small so every book feels like a recommendation.</p>
         </article>
-        <article>
+        <article className="lg:border-l-1 lg:border-l-[#666666] lg:border-r-1 lg:border-r-[#666666] lg:my-20 lg:px-12">
           <div className="flex gap-1.5 items-center">
             <Globe size={32} color="#000" />
             <h2 className="font-secondary text-[1.75em]">Easy to browse</h2>
           </div>
           <p className="font-normal text-xl">Clear categories and simple descriptions make it quick to choose what you actually want to read next.</p>
         </article>
-        <article className="mb-10">
+        <article className="mb-10 lg:my-20 xl:mr-33.75">
           <div className="flex gap-1.5 items-center">
             <Flag size={32} color="#000" />
             <h2 className="font-secondary text-[1.75em]">Readers first</h2>
@@ -46,10 +49,10 @@ export default function functionName() {
         </article>
       </section>
 
-      <section className="flex flex-col font-primary px-5 text-[#1E1E1E]">
+      <section className="flex flex-col font-primary px-5 text-[#1E1E1E] lg:mx-44.5 xl:mx-89 lg:pb-5">
         <h2 className="font-secondary text-[2.5em] mb-5">Our ethos</h2>
         <p className="font-regular">At Tiny Library, we believe a good book shouldn't be hard to find. Our ethos is to create a small, carefully curated space where every title earns its place on the shelf and readers can trust that anything they pick up is worth their time.</p>
-        <hr className="self-center w-60 my-10 border-[#4E4E4E]"/>
+        <hr className="self-center w-60 my-10 border-[#4E4E4E] xl:w-4/10"/>
         <p className="font-regular">Instead of overwhelming you with thousands of options, Tiny Library focuses on a modest collection that feels personal and approachable. We want readers to feel like they've stepped into a cosy, well-loved library where someone has already done the hard work of sorting through the noise.</p>
       </section>
     </main>
